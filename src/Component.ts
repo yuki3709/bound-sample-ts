@@ -1,4 +1,4 @@
-const defaults = {
+export const Defaults = {
     location: {
         x: 200,
         y: 150
@@ -24,8 +24,8 @@ export class Component {
         color: string,
         size: number
     }
-    constructor(props) {
-        this.props = { ...JSON.parse(JSON.stringify(defaults)), ...(props || {}) };
+    constructor(props: object | null = null) {
+        this.props = { ...JSON.parse(JSON.stringify(Defaults)), ...(props || {}) };
     }
     move(size) {
         const props = this.props;
